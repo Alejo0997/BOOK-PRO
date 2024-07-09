@@ -1,7 +1,20 @@
 <template>
-    <BPLogin />
+    <div class="home">
+        <BPSignup />
+    </div>
 </template>
 
-<script lang="ts" setup>
-import BPLogin from '@/views/BPLogin.vue'
+<script setup>
+import BPSignup from '@/views/BPSignup.vue';
 </script>
+
+<style scoped>
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-secondary);
+}
+</style>
