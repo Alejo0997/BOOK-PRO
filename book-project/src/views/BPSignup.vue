@@ -41,7 +41,7 @@
                         </p>
                         <BPButton
                             class="mt-5"
-                            color="secondary"
+                            color="primary"
                             size="large"
                         >
                             Crea una cuenta
