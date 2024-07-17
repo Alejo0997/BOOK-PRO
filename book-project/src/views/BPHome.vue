@@ -4,8 +4,9 @@
     </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import BPLogin from '@/views/BPLogin.vue'
+
 </script>
 
 <style>
