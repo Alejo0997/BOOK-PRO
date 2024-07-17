@@ -1,9 +1,21 @@
 <template>
-    <BPLogin />
-    <BPSideMenu />
+    <div class="bplogin">
+        <BPLogin />
+    </div>
 </template>
 
-<script lang="ts" setup>
+<script setup>
 import BPLogin from '@/views/BPLogin.vue'
-import BPSideMenu from '@/components/organisms/BPSideMenu.vue';
+
 </script>
+
+<style>
+.bplogin {
+    background-color: var(--background-secondary);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+</style>
