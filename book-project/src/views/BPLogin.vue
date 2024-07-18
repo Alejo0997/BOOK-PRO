@@ -32,7 +32,7 @@
                     </p>
                     <div class="mt-8 d-flex ga-5 align-center justify-space-between">
                         <span>Otros errores de inicio de <a href="#">sesión</a></span>
-                        <span><a href="#">Olvidó su contraseña</a></span>
+                        <span><router-link to="/recover-pass">Olvidó su contraseña</router-link></span>
                     </div>
                 </v-form>
             </v-card-text>
@@ -57,9 +57,6 @@
 
 <script setup>
 import { ref } from 'vue';
-import BPThemeToggle from '@/components/atoms/BPThemeToggle.vue';
-import BPButton from '@/components/atoms/BPButton.vue';
-import BPInput from '@/components/atoms/BPInput.vue';
 import { useRouter } from 'vue-router';
 
 const email = ref('')

@@ -40,13 +40,22 @@
                             Usa por lo menos 8 caracteres, una letra mayúscula, 
                             una letra minúscula y un número.
                         </p>
-                        <BPButton
-                            class="mt-5"
-                            color="primary"
-                            size="x-large"
-                        >
-                            Crea una cuenta
-                        </BPButton>
+                        <div class="d-flex align-center ga-5 mt-5">
+                            <BPButton
+                                color="primary"
+                                size="x-large"
+                            >
+                                Crear
+                            </BPButton>
+                            <BPButton  
+                                color="error"
+                                @click="goToLogin"
+                                variant="outlined"
+                                size="x-large"
+                            >
+                                Cancelar
+                            </BPButton>
+                        </div>
                     </v-form>
                 </v-card-text>
             </div>
@@ -59,15 +68,19 @@
 </template>
 
 <script setup>
-import BPInput from '@/components/atoms/BPInput.vue';
-import BPButton from '@/components/atoms/BPButton.vue';
-import BPThemeToggle from '@/components/atoms/BPThemeToggle.vue';
 import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
 
 const firstName = ref('');
 const lastName = ref('');
 const email = ref('');
 const password = ref('');
+
+function goToLogin() {
+    router.push('/');
+}
 
 </script>
 
