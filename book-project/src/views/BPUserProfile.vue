@@ -1,8 +1,8 @@
 <template>
-  <div class="bp-user-profile">
+  <div class="bp-user-profile d-flex flex-column align-center ga-2 pa-2">
     <div class="title-container"><h1>Mi Perfil</h1></div>
 
-    <div class="profile-section">
+    <div class="profile-section d-flex flex-column">
       <img class="cover-photo" :src="coverPhoto" alt="Cover Photo" />
       <div class="profile-header">
         <div class="profile-info">
@@ -10,16 +10,16 @@
             <img class="profile-photo" :src="profilePhoto" alt="Profile Photo" />
           </div>
 
-          <button @click="editProfile" class="edit-button">Editar Perfil</button>
+          <BPButton @click="editProfile" class="edit-button">Editar Perfil</BPButton>
         </div>
       </div>
     </div>
     <div class="books-section">
       <div class="content-buttons">
-        <button @click="showReadBooks" :class="{ active: view === 'read' }">Leídos</button>
-        <button @click="showInterestedBooks" :class="{ active: view === 'interested' }">
+        <BPButton @click="showReadBooks" :class="{ active: view === 'read' }">Leídos</BPButton>
+        <BPButton @click="showInterestedBooks" :class="{ active: view === 'interested' }">
           Me Interesa
-        </button>
+        </BPButton>
       </div>
       <div class="book-views">
         <div v-if="view === 'read'">
@@ -72,18 +72,14 @@ export default {
     }
   }
 }
+import BPButton from '@/components/atoms/BPButton.vue'
 </script>
 
 <style scoped>
 .bp-user-profile {
   width: 100vw;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   background-color: #28272a;
-  gap: 2em;
-  padding: 2em 0 2em 0;
 }
 .title-container {
   width: 90%;
@@ -94,8 +90,6 @@ export default {
 .profile-section {
   background-color: #42b983;
   height: 100%;
-  display: flex;
-  flex-direction: column;
   width: 90%;
   border-radius: 20px;
   overflow: hidden;
@@ -143,6 +137,7 @@ export default {
   color: white;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .books-section {
@@ -164,7 +159,7 @@ export default {
   margin-bottom: 20px;
 }
 
-.content-buttons button {
+.content-buttons BPButton {
   padding: 10px 20px;
   margin: 0 10px;
   border: 1px solid black;
