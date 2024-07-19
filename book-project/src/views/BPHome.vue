@@ -1,5 +1,5 @@
 <template>
-  <BPLogin />
+    <BPLogin />
 </template>
 
 <script setup>
