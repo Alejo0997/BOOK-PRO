@@ -1,58 +1,53 @@
 <template>
-    <div class="login d-flex flex-column justify-center align-center">
-        <v-card class="form1 pa-10">
-            <v-card-title>
-                <h1 class="text-center">
-                    Iniciar sesión
-                </h1>
-            </v-card-title>
-            <v-card-text>
-                <v-form fast-fail @submit.prevent>
-                    <BPInput 
-                        class="mt-5"
-                        v-model="email" 
-                        label="Email" 
-                    />
-                    <BPInput
-                        class="mt-5"
-                        v-model="password" 
-                        label="Contraseña" 
-                        type="password"
-                    />
-                    <BPButton 
-                        class="mt-10" 
-                        size="large" 
-                        color="primary"
-                        block
-                    >
-                        Iniciar sesión
-                    </BPButton>
-                    <p class="text-center mt-8">Continuando usted acepta nuestros 
-                        <a href=" #">terminos de uso y condiciones</a>
-                    </p>
-                    <div class="mt-8 d-flex ga-5 align-center justify-space-between">
-                        <span>Otros errores de inicio de <a href="#">sesión</a></span>
-                        <span><router-link to="/recover-pass">Olvidó su contraseña</router-link></span>
-                    </div>
-                </v-form>
-            </v-card-text>
-            <div class="mt-5">
-                <BPThemeToggle />
-            </div>
-        </v-card>
-        <div> 
-            <p class="text-center mt-5">¿Eres nuevo en la plataforma?</p>
-            <BPButton 
-                class="mt-5" 
-                size="x-large" 
-                variant="outlined"
-                block
-                @click="goToSignUp"
-            >
-                Regístrate
-            </BPButton>
+
+    <v-card class="form1 pa-15">
+    
+        <v-card-title class="">
+    
+            <h1 class="title">Iniciar sesión</h1>
+    
+        </v-card-title>
+    
+        <v-card-text class="mt-5">
+    
+            <v-form fast-fail @submit.prevent>
+    
+                <v-text-field rounded="xl" v-model="mail" label="Mail"></v-text-field>
+    
+    
+    
+                <v-text-field rounded="xl" v-model="password" label="Password" type="password"></v-text-field>
+    
+                <v-btn class="btn mt-10 bg-grey-darken-1" rounded="xl" size="large" block>Log In</v-btn>
+    
+                <p class="terms">Continuando usted acepta nuestros <a href=" #">terminos de uso y
+    
+                            condiciones</a></p>
+    
+    
+    
+                <div class="mt-5 d-flex  ga-5 align-center justify-space-between">
+    
+                    <p>Otros errores de inicio de <a href="#">sesión</a></p>
+    
+                    <p><a href="#">Olvidó su contraseña</a></p>
+    
+                </div>
+    
+                <!-- </BPButton> -->
+    
+            </v-form>
+    
+        </v-card-text>
+    
+        <div class="button">
+    
+            <BPThemeToggle />
+    
         </div>
-    </div>
+    
+    </v-card>
+
 </template>
 
 <script setup>

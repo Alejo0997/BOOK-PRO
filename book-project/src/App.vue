@@ -8,6 +8,7 @@
   
 <style>
 #app {
+
     font-family: "Karla", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
