@@ -1,22 +1,23 @@
 <template>
 
+    <div class="signup d-flex flex-column justify-center align-center">
+        <v-card class="card pa-10">
 
-        <v-card class="card pa-6">
             <div>
                 <v-card-title>
                     <h1>Crea una cuenta</h1>
-                    <p>¿Ya tienes una cuenta? <a href="">Inicia sesión</a></p>
+                    <p>¿Ya tienes una cuenta? <router-link to="/">Inicia sesión</router-link></p>
                 </v-card-title>
                 <v-card-text>
                     <v-form>
                         <div class="d-flex ga-5 mt-4">
                             <BPInput
-                                label="First Name"
+                                label="Nombre"
                                 v-model="firstName"
                                 color="secondary"
                             />
                             <BPInput
-                                label="Last Name"
+                                label="Apellido"
                                 v-model="lastName"
                             ></BPInput>
                         </div>
@@ -27,12 +28,12 @@
                         ></BPInput>
                         <div class="d-flex ga-5 mt-4">
                             <BPInput
-                                label="Password"
+                                label="Contraseña"
                                 v-model="password"
                                 type="password"
                             ></BPInput>
                             <BPInput
-                                label="Confirm Password"
+                                label="Confirmar contraseña"
                                 v-model="password"
                                 type="password"
                             ></BPInput>
@@ -41,49 +42,66 @@
                             Usa por lo menos 8 caracteres, una letra mayúscula, 
                             una letra minúscula y un número.
                         </p>
-                        <BPButton
-                            class="mt-5"
-                            color="primary"
-                            size="large"
-                        >
-                            Crea una cuenta
-                        </BPButton>
+                        <div class="d-flex align-center ga-5 mt-5">
+                            <BPButton
+                                color="primary"
+                                size="x-large"
+                            >
+                                Crear
+                            </BPButton>
+                            <BPButton  
+                                color="error"
+                                @click="goToLogin"
+                                variant="outlined"
+                                size="x-large"
+                            >
+                                Cancelar
+                            </BPButton>
+                        </div>
                     </v-form>
                 </v-card-text>
             </div>
-            <div class="image-container">
+            <div class="position-relative d-flex justify-center align-center">
                 <img src="../assets/book2.png" class="image">
-                <BPThemeToggle class="absolute-button" color="primary" />
+                <BPThemeToggle class="absolute-button position-absolute" color="primary" />
             </div>
         </v-card>
 
+    </div>
 </template>
 
 <script setup>
-import BPInput from '@/components/atoms/BPInput.vue'
-import BPButton from '@/components/atoms/BPButton.vue'
-import BPThemeToggle from '@/components/atoms/BPThemeToggle.vue'
-import { ref } from 'vue'
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
 
-const firstName = ref('')
-const lastName = ref('')
-const email = ref('')
-const password = ref('')
+const router = useRouter();
+
+const firstName = ref('');
+const lastName = ref('');
+const email = ref('');
+const password = ref('');
+
+function goToLogin() {
+    router.push('/');
+}
+
 </script>
 
 <style scoped>
-.card {
-  width: 53%;
-  height: 50%;
-  display: grid;
-  grid-template-columns: 60% 40%;
+.signup {
+    background-color: var(--background-secondary);
+    height: 100vh;
+    width: 100vw;
 }
 
-.image-container {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.card {
+    max-width: 1500px;
+    width: 92%;
+    max-height: 600px;
+    height: 82%;
+    display: grid;
+    grid-template-columns: 60% 40%;
+
 }
 
 .image {
@@ -92,8 +110,9 @@ const password = ref('')
 }
 
 .absolute-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
+
+    top: 10px;  
+    right: 10px;   
+
 }
 </style>
